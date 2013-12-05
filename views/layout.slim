@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Diary app!
+    link rel="stylesheet" type="text/css" href="/superdiary.css"
+
+  body
+    .selectall
+      nav#top
+        -if @user
+          form action="/logout" method="post"
+            button type="submit" Logga ut
+        - else
+          form action="/login" method="post"
+            input type="text" name="username" placeholder="Användare"
+            input type="password" name="password" placeholder="Lösenord"
+            button type="submit" Logga in
+    == yield
